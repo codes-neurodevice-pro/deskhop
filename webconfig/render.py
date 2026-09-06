@@ -17,7 +17,7 @@ OUTPUT_FILENAME = "config.htm"
 OUTPUT_UNPACKED = "config-unpacked.htm"
 
 def render(filename, *args, **kwargs):
-    env = Environment(loader=FileSystemLoader(TEMPLATE_PATH))
+    env = Environment(autoescape=True, loader=FileSystemLoader(TEMPLATE_PATH))
     template = env.get_template(filename)
     return template.render(*args, **kwargs)
 
